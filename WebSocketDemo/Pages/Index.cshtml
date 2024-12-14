@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div>
+    <h1>WebSocket Demo</h1>
+    <div>Current time on server is: <span id="message">?</span></div>
+</div>
+
+@section Scripts {
+    <script>
+        const messageElement = document.getElementById('message');
+        setupWebSocket(messageElement);
+    </script>
+}
