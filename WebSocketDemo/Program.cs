@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.WebSockets;
 using System.Net.WebSockets;
 using System.Text;
+using WebSocketDemo.WsHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<SendCurrentTimeHandler>();
 
 var app = builder.Build();
 
@@ -18,6 +21,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseWebSockets();
+app.UseMiddleware<WebSocketMiddleware>();
 
 app.Use(async (context, next) =>
 {
