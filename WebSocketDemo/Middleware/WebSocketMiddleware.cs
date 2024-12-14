@@ -5,9 +5,9 @@ namespace WebSocketDemo.Middleware;
 
 public class WebSocketMiddleware : IMiddleware
 {
-    private readonly SendCurrentTimeHandler _handler;
+    private readonly IWebSocketHandler _handler;
 
-    public WebSocketMiddleware(SendCurrentTimeHandler handler)
+    public WebSocketMiddleware(IWebSocketHandler handler)
     {
         _handler = handler;
     }

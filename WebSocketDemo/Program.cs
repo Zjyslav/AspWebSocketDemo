@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<SendCurrentTimeHandler>();
+builder.Services.AddScoped<IWebSocketHandler, SendCurrentTimeHandler>();
 
 var app = builder.Build();
 

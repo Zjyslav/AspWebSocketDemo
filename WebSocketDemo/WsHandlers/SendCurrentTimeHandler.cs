@@ -3,7 +3,7 @@ using System.Text;
 
 namespace WebSocketDemo.WsHandlers;
 
-public class SendCurrentTimeHandler
+public class SendCurrentTimeHandler : IWebSocketHandler
 {
     public async Task Handle(WebSocket webSocket, CancellationToken cancellationToken)
     {
